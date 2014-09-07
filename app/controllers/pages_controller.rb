@@ -20,7 +20,7 @@ class PagesController < ApplicationController
 	end
 
 	def venmo_verify
-	  render :text => params[:venmo_challenge]
+	  render :text => { note: @@payment['data']['note'], amount: @@payment['data']['amount'] }
 	end
 
 	def gimme
